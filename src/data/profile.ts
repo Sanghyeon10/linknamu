@@ -12,9 +12,10 @@ export type LinkItem = {
 
 // TODO: 보여 주기용 더미 값입니다. 실제 프로필과 링크로 바꿔 주세요.
 export const profile: Profile = {
-  name: "홍길동",
-  bio: "웹 개발자 · 기록하며 성장하는 중",
-  image: "/profile.svg",
+  name: "김개발",
+  bio: "풀스택 개발자 | 요즘에는 AI 개발에 관심이 많아요",
+  // placehold.co는 기본으로 SVG를 주므로, next/image 최적화를 위해 .png를 명시
+  image: "https://placehold.co/160x160/orange/white.png",
 };
 
 export const links: LinkItem[] = [
