@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { getDb } from "@/lib/mongodb";
 import { links } from "@/data/profile";
 
@@ -35,6 +36,8 @@ export async function POST(request: Request) {
 
 // 링크별 클릭 수를 조회합니다.
 export async function GET() {
+  // 빌드 때 미리 만들어 두지 않고 요청마다 최신 값을 읽도록 합니다.
+  await connection();
   const db = await getDb();
   if (!db) {
     return Response.json(
